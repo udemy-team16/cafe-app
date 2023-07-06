@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 
 import Footer from '../components/Footer';
@@ -8,7 +8,7 @@ import UseFavoriteCafe from 'hooks/useFavoriteCafe';
 
 import 'styles/cafe.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart as faHeartSolid, faAngleLeft, faLocationDot, faClock, faPhone, faSortDown } from "@fortawesome/free-solid-svg-icons";
+import { faHeart as faHeartSolid, faAngleLeft, faLocationDot, faClock, faPhone, faSortDown, faSortUp } from "@fortawesome/free-solid-svg-icons";
 import { faHeart as faHeartRegular } from "@fortawesome/free-regular-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 
@@ -22,8 +22,22 @@ const Cafe = () => {
     const navigate = useNavigate();
     const images = { cafe1, cafe2, cafe3, cafe4 };
 
+    const [itemsToShow, setItemsToShow] = useState(6);
+    const [expanded, setExpanded] = useState(false);
+    
     const {favorite, save_remove_Favorite} = UseFavoriteCafe(JSON.parse(localStorage.getItem("favoriteCafeList")) || []);
     const filterCafeList = cafeList.filter(e => e.idx === idx)[0];
+
+    const handleShowMoreItems = () => {
+        setItemsToShow(filterCafeList.menu.length); // 모든 메뉴 아이템 보여주기
+        setExpanded(true); // 메뉴가 확장되었음을 나타내는 상태를 true로 설정
+    };
+
+    const handleShowLessItems = () => {
+        setItemsToShow(6); // 처음 3개의 메뉴 아이템만 보여주기
+        setExpanded(false); // 메뉴가 축소되었음을 나타내는 상태를 false로 설정
+    };
+
 
     return (
         <div className='container'>
@@ -52,7 +66,7 @@ const Cafe = () => {
                 <div className='cafe-menu'>
                     <p>메뉴</p>
                     <div className='cafe-price'>
-                        {Object.entries(filterCafeList.menu).map(([key, value], index) => (
+                        {Object.entries(filterCafeList.menu).slice(0, itemsToShow).map(([key, value], index) => (
                             <div className='menu-item' key={index}>
                                 <span className='name'>{key}</span>
                                 <span className='dash'>---------------------------</span>
@@ -60,7 +74,8 @@ const Cafe = () => {
                             </div>
                         ))}
                     </div>
-                    <button>더보기 <FontAwesomeIcon icon={faSortDown} /></button>
+                    {!expanded && <button className='buttonDown' onClick={handleShowMoreItems}>더 보기 <FontAwesomeIcon icon={faSortDown} /></button>}
+                    {expanded && <button className='buttonUp' onClick={handleShowLessItems}>줄이기 <FontAwesomeIcon icon={faSortUp} /></button>}
                 </div>
             </div>
             <Footer />

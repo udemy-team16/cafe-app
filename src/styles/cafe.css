@@ -148,3 +148,10 @@
     padding: 0;
     margin: 14px auto;
 }
+
+.cafe-menu .buttonDown {
+    align-items: flex-start;
+}
+.cafe-menu .buttonUp {
+    align-items: flex-end;
+}
