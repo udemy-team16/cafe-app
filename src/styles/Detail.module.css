@@ -1,0 +1,120 @@
+.wrap {
+	width: 400px;
+	height: 600px;
+	position: absolute;
+	top: 10%;
+	left: 35%;
+	border: 5px solid #30a2ff;
+	border-radius: 10px;
+	padding: 30px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+.wrap::-webkit-scrollbar {
+	width: 0.5em;
+	background-color: transparent;
+}
+.cafe_header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.back_wrap {
+	margin-right: 40px;
+}
+.back {
+	font-size: 30px;
+	cursor: pointer;
+}
+.back_insta {
+	font-size: 35px;
+	cursor: pointer;
+	color: #C13584;
+	margin-right: 10px;
+}
+.back_insta:hover {
+	color:#E1306C;
+}
+.cafe_description {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 20px;
+	padding: 0 10px;
+	margin-bottom: 30px;
+}
+.cafe_info_wrap {
+	display: flex;
+	justify-content: left;
+	flex-direction: column;
+	color: #8f8f90;
+	font-size: 14px;
+}
+.cafe_info {
+	margin-bottom: 5px;
+}
+.cafe_info:first-child {
+	width: 160px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.cafe_seats button {
+	cursor: pointer;
+	width: 90px;
+	height: 35px;
+	border-radius: 10px;
+	background: #30a2ff;
+	border: 0;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 600;
+}
+.cafe_menu {
+	padding: 0 10px;
+}
+.cafe_menu p {
+	color: #000;
+	font-size: 16px;
+	font-weight: 700;
+	margin-bottom: 14px;
+}
+.cafe_price {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 5px 25px;
+}
+.menu_item {
+	display: flex;
+	justify-content: space-between;
+}
+.menu_item span {
+	color: #8f8f90;
+	font-size: 13px;
+	font-weight: 700;
+}
+.name {
+	width: 83px;
+	text-align: left;
+	position: relative;
+	padding-right: 3px;
+}
+.dash {
+	overflow-x: hidden;
+	white-space: nowrap;
+}
+.price {
+	padding-left: 3px;
+}
+.cafe_menu button {
+  cursor: pointer;
+	border: none;
+	display: flex;
+	gap: 5px;
+	background-color: #fff;
+	color: #8f8f90;
+	font-size: 12px;
+	font-weight: 700;
+	padding: 0;
+	margin: 14px auto;
+}

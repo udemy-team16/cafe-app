@@ -1,0 +1,15 @@
+.footer_wrap {
+  background-color: #eee;
+  width: 32%;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  top: 687px;
+  left: 503px;
+  border-radius: 5px;
+}
+.footer_wrap img {
+  cursor: pointer;
+}

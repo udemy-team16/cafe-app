@@ -1,0 +1,65 @@
+.wrap {
+  cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 360px;
+	background-color: #eeeeee;
+	border-radius: 10px;
+	padding: 15px;
+  margin-bottom: 20px;
+}
+.cafe_wrap {
+	width: 180px;
+  display: flex;
+  flex-direction: column;
+}
+.cafe_img {
+	width: 150px;
+	height: 130px;
+}
+.cafe_title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.cafe_title div { 
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 20px;
+}
+.heart_btn{
+  cursor: pointer;
+  font-size: 22px;
+}
+.address{
+  width: 155px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.vide_wrap{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-bottom: 17px;
+}
+.vide {
+  background-color: #30A2FF;
+  border-radius: 5px;
+  padding: 7px;
+  color: #fafafa;
+  margin-right: 5px;
+  font-size: 16px;
+  font-weight: 700;
+}
+.cafe_wrap p {
+  text-align: right;
+  font-weight: 700;
+  font-size: 15px;
+  margin:0
+}
