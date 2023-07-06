@@ -46,7 +46,7 @@ const Cafe = () => {
                     <span onClick={() => navigate(-1)}><FontAwesomeIcon icon={faAngleLeft} /></span>
                     <h2 className='cafe-title'>{filterCafeList.name}</h2>
                     <div style={{display: "flex", alignItems: "center", position: "relative"}}>
-                        <span className='insta'><Link to="https://www.instagram.com/"><FontAwesomeIcon icon={faInstagram} /></Link></span>
+                        <span className='insta'><Link to={`https://www.instagram.com/${filterCafeList.name}/`}><FontAwesomeIcon icon={faInstagram} /></Link></span>
                         <span style={{ color: 'red' }} onClick={() => save_remove_Favorite(filterCafeList.idx)}>{favorite.includes(filterCafeList.idx) ? <FontAwesomeIcon icon={faHeartSolid} /> : <FontAwesomeIcon icon={faHeartRegular}/> }</span>
                     </div>
                 </div>
