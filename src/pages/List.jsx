@@ -11,7 +11,7 @@ import 'styles/list.css'
 const List = () => {
     const {favorite, save_remove_Favorite} = UseFavoriteCafe(JSON.parse(localStorage.getItem("favoriteCafeList")) || []);
 
-    const [selectVlaue, setSelectValue] = useState('');
+    const [selectVlaue, setSelectValue] = useState('all');
     const [isSearch, setIsSearch] = useState(false);
 
     const [filterList, setFilterList] = useState(cafeList);
@@ -19,12 +19,14 @@ const List = () => {
     const searchInput = (e) => {
         if (e.key === 'Enter') {
             const inputValue = e.target.value.trim();
+            console.log(inputValue);
             if (inputValue === '') {
                 setIsSearch(false);
                 setFilterList([...cafeList])
             } else {
                 setIsSearch(true);
-                setFilterList([...cafeList.filter(item => item.name.includes(inputValue))])
+                let filteredList = cafeList.filter(item => item.name.includes(inputValue));
+                setFilterList(filteredList);
             }
         }
     }
@@ -71,7 +73,7 @@ const List = () => {
                         <div className='listDiv'>
                             <p className='listTitle'>검색 결과</p>
                             <div className='cafeList'>
-                                <Box cafeList={filterList.filter(e => e.filter_id === selectVlaue)} favorite={favorite} save_remove_Favorite={save_remove_Favorite}/>
+                                <Box cafeList={selectVlaue === "all" ? filterList : filterList.filter(e => e.filter_id === selectVlaue) } favorite={favorite} save_remove_Favorite={save_remove_Favorite}/>
                             </div>
                         </div>
                     </>
