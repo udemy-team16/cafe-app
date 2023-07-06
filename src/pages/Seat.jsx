@@ -28,8 +28,6 @@ const Seat = () => {
         setRemain(indexes);
     }, [filterCafeList]);
 
-    console.log(remain);
-
     return (
         <div className='container'>
             <div className='topBackColor'></div>

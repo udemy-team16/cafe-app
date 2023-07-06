@@ -29,8 +29,6 @@ const List = () => {
         }
     }
 
-    console.log(filterList);    
-
     return (
         <div className='container'>
             <div className='list'>
