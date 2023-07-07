@@ -3,7 +3,7 @@
     flex-direction: column;
     padding: 25px;
     gap: 10px;
-    height: calc(100vh - 445px);
+    /* height: calc(100vh - 45%); */
     overflow-y: auto;
     -ms-overflow-style: none;
     scrollbar-width: none; 

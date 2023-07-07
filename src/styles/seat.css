@@ -15,7 +15,7 @@
     font-family: Pretendard;
     font-weight: 700;
     letter-spacing: 0em;
-    height: calc(100vh - 445px);
+    /* height: calc(100vh - 45%); */
     overflow-y: auto;
     -ms-overflow-style: none;
     scrollbar-width: none; 
