@@ -1,9 +1,10 @@
 .cafe {
+    flex-shrink: 0;
     display: flex;
     flex-direction: column;
     padding: 25px;
     gap: 10px;
-    /* height: calc(100vh - 45%); */
+    height: calc(100% - 100px);
     overflow-y: auto;
     -ms-overflow-style: none;
     scrollbar-width: none; 
